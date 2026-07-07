@@ -1,0 +1,392 @@
+.sidebar {
+    width: 252px;
+    background: #000000;
+    color: white;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 0.75rem;
+    border-right: 1px solid #282828;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.sidebar-logo {
+    padding: 0 0.75rem 1.5rem;
+    border-bottom: 1px solid #282828;
+    margin-bottom: 1rem;
+}
+
+.logo-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.2s;
+}
+
+.logo-link:hover {
+    color: #1db954;
+}
+
+/* Main Navigation */
+.sidebar-nav {
+    margin-bottom: 1.5rem;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 0.75rem;
+    color: #b3b3b3;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.2s;
+    margin-bottom: 0.25rem;
+}
+
+.nav-item:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-item.active {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    font-weight: 600;
+}
+
+.nav-icon {
+    font-size: 1.25rem;
+    width: 24px;
+    text-align: center;
+}
+
+.nav-text {
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* Playlists Section */
+.playlists-section {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+}
+
+.playlists-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.playlists-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #b3b3b3;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.create-playlist-btn {
+    background: transparent;
+    border: none;
+    color: #b3b3b3;
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 2px;
+    transition: all 0.2s;
+}
+
+.create-playlist-btn:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.playlists-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.playlist-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    color: #b3b3b3;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.playlist-item:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.playlist-icon {
+    font-size: 1rem;
+    width: 20px;
+    text-align: center;
+}
+
+.playlist-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+}
+
+.playlist-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.playlist-count {
+    font-size: 0.75rem;
+    color: #b3b3b3;
+}
+
+/* Loading and Empty States */
+.loading-playlists,
+.no-playlists {
+    padding: 1rem 0.75rem;
+    text-align: center;
+    color: #b3b3b3;
+    font-size: 0.8rem;
+}
+
+.loading-playlists {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.loading-playlists::after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border: 2px solid #b3b3b3;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* User Section */
+.user-section {
+    margin-top: auto;
+    border-top: 1px solid #282828;
+    transition: margin-bottom 0.3s ease;
+}
+
+.user-section.player-active {
+    margin-bottom: 5rem;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.user-info:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.user-avatar {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #1db954, #1ed760);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: black;
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+}
+
+.user-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.user-email {
+    font-size: 0.75rem;
+    color: #b3b3b3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.login-link {
+    font-size: 0.8rem;
+    color: #1db954;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.login-link:hover {
+    color: #1ed760;
+    text-decoration: underline;
+}
+
+/* Scrollbar Styling */
+.sidebar::-webkit-scrollbar,
+.playlists-section::-webkit-scrollbar {
+    width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-track,
+.playlists-section::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb,
+.playlists-section::-webkit-scrollbar-thumb {
+    background: #404040;
+    border-radius: 4px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover,
+.playlists-section::-webkit-scrollbar-thumb:hover {
+    background: #505050;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 70px;
+        padding: 1rem 0.5rem;
+    }
+
+    .logo-link span:not(:first-child),
+    .nav-text,
+    .playlists-title,
+    .playlist-info,
+    .user-details {
+        display: none;
+    }
+
+    .nav-item,
+    .playlist-item {
+        justify-content: center;
+        padding: 0.75rem;
+    }
+
+    .playlists-header {
+        justify-content: center;
+    }
+
+    .sidebar-logo {
+        padding: 0 0.5rem 1rem;
+        text-align: center;
+    }
+
+    .logo-link {
+        justify-content: center;
+    }
+}
+
+/* Dark theme variations */
+@media (prefers-color-scheme: dark) {
+    .sidebar {
+        background: #000000;
+    }
+}
+
+/* High contrast support */
+@media (prefers-contrast: high) {
+    .sidebar {
+        border-right: 2px solid #ffffff;
+    }
+
+    .nav-item.active {
+        background: #ffffff;
+        color: #000000;
+    }
+}
+
+/* Add to your existing Sidebar.css */
+
+/* Refresh Button Styles */
+.refresh-btn {
+    background: transparent;
+    border: none;
+    color: #b3b3b3;
+    cursor: pointer;
+    padding: 0.25rem;
+    border-radius: 4px;
+    transition: all 0.2s;
+    font-size: 1rem;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.refresh-btn:hover {
+    color: #1db954;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.refresh-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Update playlists header to include refresh button */
+.playlists-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.playlists-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #b3b3b3;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+}

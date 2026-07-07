@@ -1,0 +1,265 @@
+.playlist-view-container {
+    background: linear-gradient(180deg, #1e1e1e 0%, #121212 100%);
+    min-height: 100vh;
+    color: white;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.playlist-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.back-btn {
+    background: transparent;
+    border: 1px solid #404040;
+    color: #b3b3b3;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    transition: all 0.2s;
+}
+
+.back-btn:hover {
+    border-color: #b3b3b3;
+    color: white;
+}
+
+.playlist-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    background: linear-gradient(45deg, #1db954, #1ed760);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.playlist-info {
+    color: #b3b3b3;
+    font-size: 1.1rem;
+    margin: 0;
+    text-align: center !important;
+}
+
+.playlist-items {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.playlist-item {
+    display: flex;
+    align-items: center;
+    background: #181818;
+    border-radius: 8px;
+    padding: 1rem;
+    border: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+.playlist-item:hover {
+    background: #282828;
+    border-color: #404040;
+}
+
+.item-number {
+    background: #1db954;
+    color: black;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-right: 1rem;
+}
+
+.item-details {
+    flex: 1;
+}
+
+.surah-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 0.25rem 0;
+    color: white;
+}
+
+.surah-id {
+    color: #b3b3b3;
+    font-size: 0.9rem;
+}
+
+.item-actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.play-btn, .remove-btn {
+    background: transparent;
+    border: none;
+    color: #b3b3b3;
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 10px;
+    border-radius: 50%;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+}
+
+.play-btn {
+    background: #1db954;
+    color: black;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.play-btn:hover {
+    transform: scale(1.1);
+}
+
+.remove-btn {
+    border: 1px solid #404040;
+}
+
+.remove-btn:hover {
+    background: #e74c3c;
+    color: white;
+    border-color: #e74c3c;
+}
+
+.empty-playlist {
+    text-align: center;
+    padding: 3rem;
+    color: #b3b3b3;
+}
+
+.browse-btn {
+    background: #1db954;
+    color: black;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 1rem;
+    transition: all 0.2s;
+}
+
+.browse-btn:hover {
+    background: #1ed760;
+    transform: scale(1.05);
+}
+
+.loading, .error {
+    text-align: center;
+    padding: 3rem;
+    font-size: 1.1rem;
+}
+
+.loading {
+    color: #1db954;
+}
+
+.error {
+    color: #e74c3c;
+}
+.login-prompt {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    margin: 2rem auto;
+    max-width: 400px;
+}
+
+.login-prompt h2 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.login-prompt p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.login-btn {
+    background: #181818;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.login-btn:hover {
+    background: #141414;
+}
+@media (max-width: 768px) {
+    .playlist-view-container {
+        padding: 1rem;
+    }
+
+    .playlist-title {
+        font-size: 2rem;
+    }
+
+    .playlist-item {
+        padding: 0.75rem;
+    }
+
+    .item-number {
+        width: 28px;
+        height: 28px;
+        font-size: 0.8rem;
+        margin-right: 0.75rem;
+    }
+}
+.language-info {
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    background: rgba(29, 185, 84, 0.1);
+    border-radius: 4px;
+    border-left: 3px solid #1db954;
+}
+
+.language-info small {
+    color: #1db954;
+    font-size: 0.8rem;
+}
+.now-playing-indicator {
+    background: linear-gradient(45deg, #1db954, #1ed760);
+    color: black;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    margin-top: 4px;
+    display: inline-block;
+}
+
+.result-play-btn.playing,
+.play-btn.playing {
+    background: #1db954;
+    color: black;
+    transform: scale(1.1);
+}

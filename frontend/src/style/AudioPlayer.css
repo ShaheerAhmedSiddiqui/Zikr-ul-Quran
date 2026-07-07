@@ -1,0 +1,370 @@
+.audio-player {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #181818;
+    border-top: 1px solid #282828;
+    padding: 1rem;
+    z-index: 1000;
+}
+
+.audio-player.empty {
+    background: #282828;
+}
+
+.audio-player.empty .player-content {
+    justify-content: center;
+}
+
+.audio-player.empty p {
+    color: #b3b3b3;
+    font-size: 0.9rem;
+}
+
+.player-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+/* Track Info */
+.track-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+    min-width: 200px;
+}
+
+.track-image {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, #1db954, #1ed760);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.surah-number {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.track-details {
+    flex: 1;
+}
+
+.track-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 0 0 0.25rem 0;
+    color: white;
+}
+
+.track-artist {
+    font-size: 0.8rem;
+    color: #b3b3b3;
+    margin: 0;
+}
+
+.like-btn {
+    background: transparent;
+    border: none;
+    color: #b3b3b3;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.like-btn:hover {
+    color: #1db954;
+    transform: scale(1.1);
+}
+
+/* Playback Controls */
+.playback-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 2;
+    max-width: 600px;
+}
+
+.control-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.control-btn {
+    background: transparent;
+    border: none;
+    color: #b3b3b3;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: all 0.2s;
+}
+
+.control-btn:hover {
+    color: white;
+}
+
+.play-btn.large {
+    background: white;
+    border: none;
+    color: black;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all 0.2s;
+}
+
+.play-btn.large:hover {
+    transform: scale(1.1);
+}
+
+/* Progress Bar */
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.time-current,
+.time-duration {
+    font-size: 0.7rem;
+    color: #b3b3b3;
+    min-width: 40px;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 4px;
+    background: #404040;
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+.progress-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.progress-bar:hover::-webkit-slider-thumb {
+    opacity: 1;
+}
+
+.progress-bar::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    border: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.progress-bar:hover::-moz-range-thumb {
+    opacity: 1;
+}
+
+/* Volume Controls */
+.volume-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+    justify-content: flex-end;
+    min-width: 150px;
+}
+
+.volume-btn {
+    background: transparent;
+    border: none;
+    color: #b3b3b3;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.5rem;
+}
+
+.volume-bar {
+    width: 100px;
+    height: 4px;
+    background: #404040;
+    border-radius: 2px;
+    outline: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+}
+
+.volume-bar::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.volume-bar:hover::-webkit-slider-thumb {
+    opacity: 1;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .audio-player {
+        padding: 0.5rem;
+    }
+
+    .player-content {
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .track-info {
+        min-width: auto;
+        flex: none;
+    }
+
+    .playback-controls {
+        order: 3;
+        flex: 1 100%;
+        max-width: none;
+    }
+
+    .volume-controls {
+        flex: none;
+        min-width: auto;
+    }
+
+    .volume-bar {
+        width: 60px;
+    }
+
+    .track-details {
+        display: none;
+    }
+}
+
+/* Progress bar container for clickable progress */
+.progress-bar-container {
+    flex: 1;
+    height: 4px;
+    background: #404040;
+    border-radius: 2px;
+    cursor: pointer;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #1db954;
+    border-radius: 2px;
+    transition: width 0.1s;
+    position: relative;
+}
+
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    right: -6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.progress-bar-container:hover .progress-fill::after {
+    opacity: 1;
+}
+
+/* Active states for shuffle and repeat */
+.control-btn.active {
+    color: #1db954;
+}
+
+/* Error and loading states */
+.error-section {
+    margin-top: 5px;
+}
+
+.error-text {
+    color: #e74c3c;
+    font-size: 0.7rem;
+    margin: 0;
+}
+
+.loading-text {
+    color: #1db954;
+    font-size: 0.7rem;
+    margin: 0;
+}
+
+.play-btn.large.loading {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+/* Close Button Styles */
+.close-btn {
+    background: none;
+    border: none;
+    color: #b3b3b3;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: all 0.2s;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-btn:hover {
+    background-color: #404040;
+    color: white;
+    transform: scale(1.1);
+}
+
+/* Ensure track-info has proper spacing */
+.track-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+    min-width: 200px;
+    position: relative;
+}

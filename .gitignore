@@ -1,0 +1,51 @@
+# IntelliJ / IDE
+.idea/
+*.iml
+
+# Backend build
+backend/zikr-backend/target/
+*.log
+
+# Frontend dependencies
+frontend/node_modules/
+frontend/build/
+
+# Environment files
+.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Audio files (too large)
+backend/zikr-backend/src/main/resources/static/audio/
+
+# Misc
+*.tmp
+*.cache
+
+# Maven wrapper
+.mvn/
+mvnw
+mvnw.cmd
+
+# React cache
+frontend/.eslintcache
+
+# Java
+target/
+*.class
+
+# React
+node_modules/
+
+# Audio files
+backend/zikr-backend/src/main/resources/static/audio/
+
+# IDE
+.idea/
+.vscode/
+
+# Environment
+.env
